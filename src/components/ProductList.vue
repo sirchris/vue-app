@@ -8,13 +8,19 @@
 
         <p v-else>No products!</p>
 
-        <button v-on:click="removeLastItem()">Remove last item</button>
-        <button v-on:click="sortList()">Sort products</button>
+        <md-button class="md-dense md-raised md-accent" v-on:click="removeLastItem()">Remove last item</md-button>
+        <md-button class="md-dense md-raised md-primary" v-on:click="sortList()">Sort products</md-button>
     </div>
 </template>
 
 <script>
+    import 'vue-material/dist/vue-material.min.css'
+    import 'vue-material/dist/theme/default.css'
     import Product from './Product';
+    import Vue from 'vue';
+    import { MdButton } from 'vue-material/dist/components'
+
+    Vue.use(MdButton);
 
     export default {
         name: 'ProductList',
@@ -49,6 +55,6 @@
     }
 
     button {
-        margin: 0 5px;
+        margin: 0 10px;
     }
 </style>
